@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Fin de Año</title>
+
+    <!-- Metaetiquetas para redes sociales -->
+    <meta property="og:title" content="Festival Fin de Año Escolar 2025">
+    <meta property="og:description" content="Celebremos juntos el cierre de un gran ciclo escolar - 29 de Junio, 2025">
+    <meta property="og:image" content="https://TU-USUARIO.github.io/TU-REPO/img/preview.jpg">
+    <meta property="og:url" content="https://TU-USUARIO.github.io/TU-REPO/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Festival Fin de Año Escolar 2025">
+    <meta name="twitter:description" content="Celebremos juntos el cierre de un gran ciclo escolar - 29 de Junio, 2025">
+    <meta name="twitter:image" content="https://TU-USUARIO.github.io/TU-REPO/img/preview.jpg">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsables.css">
+    <link rel="stylesheet" href="css/itinerario.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="initial-modal" id="initial-modal">
+        <div class="initial-modal-content">
+            <h2 class="initial-modal-title">¡Bienvenidos!</h2>
+            <p class="initial-modal-message">Haz clic en el botón para abrir la invitación</p>
+            <button class="initial-modal-button" id="open-invitation-button">Abrir Invitación</button>
+        </div>
+    </div>
+    <!-- Audio oculto para música de fondo -->
+    <audio id="music" src="musica.mp3"></audio>
+    <!-- Botón flotante para silenciar/activar música -->
+    <button id="mute-music-btn" class="mute-music-btn" aria-label="Silenciar música" style="display:none;">
+        <span id="mute-music-icon">🔊</span>
+    </button>
+    <!-- Portada principal envuelta en .slide -->
+    <div class="slide">
+        <div class="logo-esquina" id="inicio">
+            <img src="img/logo.png" alt="Logo Colegio">
+        </div>
+        <div class="portada-container">
+            <img src="img/portada.jpg" alt="Portada Fin de Año" class="portada-img">
+            <div class="evento-overlay"></div>
+            <div class="evento-texto">
+                <div class="evento-frase">“Celebremos juntos el cierre de un gran ciclo escolar”</div>
+                <div class="evento-titulo">
+                    Festival de<br>
+                    Fin de Año Escolar
+                </div>
+                <div class="evento-fecha-hora-tarjeta">
+                    <div class="fecha-tarjeta">
+                        <div class="tarjeta-mes">JUN</div>
+                        <div class="tarjeta-dia">29</div>
+                        <div class="tarjeta-label">DÍA</div>
+                    </div>
+                    <div class="tarjeta-linea"></div>
+                    <div class="fecha-tarjeta">
+                        <div class="tarjeta-hora">18:00</div>
+                        <div class="tarjeta-label">HORA</div>
+                    </div>
+                </div>
+                <div class="evento-contador" id="contador">
+                    <div>
+                        <span id="dias">00</span>
+                        <span class="contador-label">DÍAS</span>
+                    </div>
+                    <div>
+                        <span id="horas">00</span>
+                        <span class="contador-label">HORAS</span>
+                    </div>
+                    <div>
+                        <span id="minutos">00</span>
+                        <span class="contador-label">MINUTOS</span>
+                    </div>
+                    <div>
+                        <span id="segundos">00</span>
+                        <span class="contador-label">SEGUNDOS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nueva sección de ubicación -->
+    <section class="ubicacion-section" id="ubicacion">
+        <div class="ubicacion-container">
+            <h2 class="ubicacion-title">Lugar del Evento</h2>
+            <h3 class="ubicacion-venue">Teatro Esperanza Iris</h3>
+            <p class="ubicacion-direccion">
+                <span class="ubicacion-icon">📍</span>
+                Perif. Carlos Pellicer Cámara s/n, Centro, 86000 Villahermosa, Tab.
+            </p>
+            <div class="ubicacion-mapa-container">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73084.18560700638!2d-93.00698337622589!3d17.992501040489177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85edd9cccbf3f8ff%3A0x6b6bb38f9fc595ec!2sTeatro%20Esperanza%20Iris!5e0!3m2!1ses!2smx!4v1751101684291!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            </div>
+            <a href="https://maps.app.goo.gl/UAf1izYevH7V8max9" target="_blank" class="ubicacion-btn">
+                <span class="ubicacion-btn-icon">🗺️</span>
+                Abrir en Google Maps
+            </a>
+        </div>
+    </section>
+
+    <!-- Sección de Itinerario de Bailables -->
+    <section class="itinerario-section" id="itinerario">
+        <h2>Programa del Festival</h2>
+        <div class="itinerario-timeline">
+            <ul class="itinerario-timeline-list" id="itinerario-list">
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">CORO</div>
+                        <div class="bailable-grado">Alumnos de Secundaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">TABASCO</div>
+                        <div class="bailable-grado">Tamborileros <span>Primaria y Secundaria</span></div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">EL POCHÓ</div>
+                        <div class="bailable-grado">Secundaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">PARAJA IDEAL</div>
+                        <div class="bailable-grado">Constanza y Valentín</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">EL CENZONTLE</div>
+                        <div class="bailable-grado">Preescolar</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">MI CONTÍ</div>
+                        <div class="bailable-grado">Preescolar</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">PACHULÍ</div>
+                        <div class="bailable-grado">Preescolar</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">MIRLO MACHO</div>
+                        <div class="bailable-grado">6° A Primaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">TUTUPANA</div>
+                        <div class="bailable-grado">6° B Primaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">TABASCO BRAVA</div>
+                        <div class="bailable-grado">Secundaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">PIO</div>
+                        <div class="bailable-grado">Secundaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">SIXHUA</div>
+                        <div class="bailable-grado">Secundaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">JILGUERO</div>
+                        <div class="bailable-grado">Secundaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">EL TIGRE</div>
+                        <div class="bailable-grado">Secundaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">BAJA CALIFORNIA "LA LOBA"</div>
+                        <div class="bailable-grado">Constanza y Gerardo</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">REVOLUCIÓN "LAS ADELITAS"</div>
+                        <div class="bailable-grado">1° A Preescolar</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">REVOLUCIÓN "LAS CORONELAS"</div>
+                        <div class="bailable-grado">1° B Preescolar</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">CHIHUAHUA "PA MI NOVIO"</div>
+                        <div class="bailable-grado">1° A Primaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">CHIHUAHUA "LA COYOTA CON RABIA"</div>
+                        <div class="bailable-grado">1° B Primaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">NUEVO LEÓN "MEZQUITÓN"</div>
+                        <div class="bailable-grado">5° A Primaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">NUEVO LEÓN "PÁVIDO NÁVIDO"</div>
+                        <div class="bailable-grado">5° B Primaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">TAMAULIPAS "QUERREQUÉ"</div>
+                        <div class="bailable-grado">Secundaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">GUERRERO "LA MALAGUEÑA"</div>
+                        <div class="bailable-grado">4° A Primaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">GUERRERO "LAS AMARILLAS"</div>
+                        <div class="bailable-grado">4° B Primaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">VERACRUZ "EL BUTAQUITO"</div>
+                        <div class="bailable-grado">2° A Primaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">VERACRUZ "LA GUACAMAYA"</div>
+                        <div class="bailable-grado">2° B Primaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">VERACRUZ "EL CASCABEL"</div>
+                        <div class="bailable-grado">3° A Primaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">VERACRUZ "COLAS"</div>
+                        <div class="bailable-grado">3° B Primaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">VERACRUZ "EL FANDANGO JAROCHO"</div>
+                        <div class="bailable-grado">Secundaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">MARIACHI "REINA DE MÉXICO" FLOREO</div>
+                        <div class="bailable-grado">Mario Valdez Herrera</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">JALISCO "LAS ALAZANAS"</div>
+                        <div class="bailable-grado">Secundaria</div>
+                    </div>
+                </li>
+                <li class="itinerario-timeline-item">
+                    <span class="itinerario-timeline-dot"></span>
+                    <div class="itinerario-timeline-card">
+                        <div class="bailable-nombre">JALISCO "EL SON DE LA NEGRA"</div>
+                        <div class="bailable-grado">Secundaria</div>
+                    </div>
+                </li>
+            </ul>
+            <!-- Añadir el div de paginación aquí -->
+            <div class="itinerario-pagination" id="itinerario-pagination"></div>
+        </div>
+    </section>
+    <!-- Sección de Responsables y Personal -->
+    <section class="responsables-section" id="responsables">
+        <h2 class="section-title">Responsables</h2>
+        <div class="responsables-carousel-container">
+            <button class="carousel-btn carousel-btn-prev" id="carouselPrev" aria-label="Anterior">&#10094;</button>
+            <div class="responsables-carousel" id="responsablesCarousel">
+                <div class="responsable-card">
+                    <div class="responsable-icon">🎭</div>
+                    <div class="responsable-titulo">Maestros de Folklor</div>
+                    <ul>
+                        <li>Mtro. Henry Valentín Palma Aguilar</li>
+                        <li>Mtra. Ruby Isabel Ocaña Martínez</li>
+                        <li>Mtro. Daniel Enrique Díaz Estrada</li>
+                    </ul>
+                </div>
+                <div class="responsable-card">
+                    <div class="responsable-icon">🥁</div>
+                    <div class="responsable-titulo">Maestros Tamborileros</div>
+                    <ul>
+                        <li>Mtro. José Cruz Rodríguez Jerónimo</li>
+                        <li>Mtro. Alejandro Rodríguez Gerónimo</li>
+                    </ul>
+                </div>
+                <div class="responsable-card">
+                    <div class="responsable-icon">🎤</div>
+                    <div class="responsable-titulo">Coro</div>
+                    <ul>
+                        <li>Mtra. María B. González del Castillo</li>
+                    </ul>
+                </div>
+                <div class="responsable-card">
+                    <div class="responsable-icon">🎬</div>
+                    <div class="responsable-titulo">Producción</div>
+                    <ul>
+                        <li>Mtro. Fernando González Galindo</li>
+                    </ul>
+                </div>
+            </div>
+            <button class="carousel-btn carousel-btn-next" id="carouselNext" aria-label="Siguiente">&#10095;</button>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+    </section>
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="footer-logo">
+                    <img src="img/logo.png" alt="Logo Colegio" />
+                </div>
+                <div class="footer-brand-title">IET CARLOS PELLICER CÁMARA</div>
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">Enlaces rápidos</div>
+                <ul class="footer-links footer-links-horizontal">
+                    <li><a href="#inicio" class="scroll-link">Inicio</a></li>
+                    <li><a href="#itinerario" class="scroll-link">Itinerario</a></li>
+                    <li><a href="#responsables" class="scroll-link">Responsables</a></li>
+                    <li><a href="#">Ubicación</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">Contáctanos</div>
+                <ul class="footer-contact">
+                    <li><span class="footer-icon">📍</span> Samarkanda 313 Galaxia/Tabasco 2000, 86035 Villahermosa, Tab.</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">Síguenos</div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">
+                        <!-- Facebook SVG -->
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M22 12.07C22 6.48 17.52 2 12 2S2 6.48 2 12.07c0 5.02 3.66 9.16 8.44 9.93v-7.03H7.9v-2.9h2.54V9.84c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.9h-2.34v7.03C18.34 21.23 22 17.09 22 12.07z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <!-- Instagram SVG -->
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5zm5.13.88a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copy">
+            &copy; 2025 IET CARLOS PELLICER CÁMARA. Todos los derechos reservados.
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Referencias a elementos DOM
+            const modal = document.getElementById('initial-modal');
+            const btn = document.getElementById('open-invitation-button');
+            const mainSlide = document.querySelector('.slide');
+            const music = document.getElementById('music');
+            const muteBtn = document.getElementById('mute-music-btn');
+            const muteIcon = document.getElementById('mute-music-icon');
+
+            // Configuración inicial correcta
+            modal.style.display = 'flex';
+            modal.style.opacity = '1';
+            mainSlide.style.opacity = '0';
+            mainSlide.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+
+            // Evento click del botón
+            btn.addEventListener('click', function() {
+                modal.style.opacity = '0';
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    mainSlide.style.opacity = '1';
+                    mainSlide.classList.add('fadeIn');
+                    document.body.style.overflow = '';
+                    muteBtn.style.display = 'flex';
+                    
+                    try {
+                        let playPromise = music.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(function(error) {
+                                console.log("Reproducción automática bloqueada:", error);
+                            });
+                        }
+                    } catch (e) {
+                        console.log("Error al reproducir música:", e);
+                    }
+                }, 300);
+            });
+
+            // Control de música
+            muteBtn.addEventListener('click', function() {
+                music.muted = !music.muted;
+                muteIcon.textContent = music.muted ? '🔇' : '🔊';
+                muteBtn.setAttribute('aria-label', music.muted ? 'Activar música' : 'Silenciar música');
+            });
+
+            // Contador regresivo
+            const eventoFecha = new Date(2025, 5, 29, 18, 0, 0);
+            function actualizarContador() {
+                const ahora = new Date();
+                let diff = eventoFecha - ahora;
+                if (diff < 0) diff = 0;
+                const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const minutos = Math.floor((diff / (1000 * 60)) % 60);
+                const segundos = Math.floor((diff / 1000) % 60);
+                
+                document.getElementById('dias').textContent = dias.toString().padStart(2, '0');
+                document.getElementById('horas').textContent = horas.toString().padStart(2, '0');
+                document.getElementById('minutos').textContent = minutos.toString().padStart(2, '0');
+                document.getElementById('segundos').textContent = segundos.toString().padStart(2, '0');
+            }
+            actualizarContador();
+            setInterval(actualizarContador, 1000);
+
+            // Paginación del itinerario
+            const ITEMS_PER_PAGE = 8;
+            const list = document.getElementById('itinerario-list');
+            const pagination = document.getElementById('itinerario-pagination');
+            
+            if (list && pagination) {
+                const items = Array.from(list.children);
+                let currentPage = 1;
+                const totalPages = Math.ceil(items.length / ITEMS_PER_PAGE);
+
+                function showPage(page) {
+                    items.forEach((item, i) => {
+                        item.style.display = (i >= (page-1)*ITEMS_PER_PAGE && i < page*ITEMS_PER_PAGE) ? '' : 'none';
+                    });
+                    renderPagination(page);
+                }
+
+                function renderPagination(page) {
+                    let html = '';
+                    if (totalPages <= 1) {
+                        pagination.innerHTML = '';
+                        return;
+                    }
+                    html += `<button ${page===1?'disabled':''} onclick="changeItinerarioPage(${page-1})">&laquo;</button>`;
+                    for(let i=1; i<=totalPages; i++) {
+                        html += `<button ${i===page?'class="active"':''} onclick="changeItinerarioPage(${i})">${i}</button>`;
+                    }
+                    html += `<button ${page===totalPages?'disabled':''} onclick="changeItinerarioPage(${page+1})">&raquo;</button>`;
+                    pagination.innerHTML = html;
+                }
+
+                window.changeItinerarioPage = function(page) {
+                    if(page<1 || page>totalPages) return;
+                    currentPage = page;
+                    showPage(page);
+                    window.scrollTo({top: document.querySelector('.itinerario-section').offsetTop-20, behavior:'smooth'});
+                };
+
+                showPage(currentPage);
+            }
+
+            // Inicializar carrusel de responsables
+            const carousel = document.getElementById('responsablesCarousel');
+            const cards = Array.from(carousel.children);
+            const prevBtn = document.getElementById('carouselPrev');
+            const nextBtn = document.getElementById('carouselNext');
+            const dotsContainer = document.getElementById('carouselDots');
+            let current = 0;
+            let visible = 1;
+
+            function updateVisible() {
+                if (window.innerWidth >= 1100) visible = 3;
+                else if (window.innerWidth >= 700) visible = 2;
+                else visible = 1;
+            }
+
+            function render() {
+                updateVisible();
+                cards.forEach((card, i) => {
+                    if (i >= current && i < current + visible) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                prevBtn.disabled = current === 0;
+                nextBtn.disabled = current + visible >= cards.length;
+                
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i <= cards.length - visible; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = 'carousel-dot' + (i === current ? ' active' : '');
+                    dot.onclick = () => { current = i; render(); };
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            prevBtn.onclick = () => { if (current > 0) { current--; render(); } };
+            nextBtn.onclick = () => { if (current + visible < cards.length) { current++; render(); } };
+
+            window.addEventListener('resize', () => {
+                let oldVisible = visible;
+                updateVisible();
+                if (visible !== oldVisible) {
+                    current = Math.max(0, Math.min(current, cards.length - visible));
+                    render();
+                }
+            });
+
+            render();
+
+            // Scroll suave
+            document.querySelectorAll('.scroll-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        const target = document.querySelector(href);
+                        if (target) {
+                            e.preventDefault();
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
